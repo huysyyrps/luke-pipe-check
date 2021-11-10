@@ -208,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
         first = false;
     }
 
+
     public void getLevel() {
         if (pipeLeave.equals("GC2 GC3")) {
             if (maxWorkMPaData < PL0NumData * 0.3) {
