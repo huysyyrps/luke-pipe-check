@@ -61,6 +61,7 @@ public class ActivityCode extends AppCompatActivity {
         for (int i = 0; i < 20; i++) {
             strRand += String.valueOf((int) (Math.random() * 10));
         }
+        //android ID+当前时间+10位随机数
         String code1 = deviceId + time + strRand;
         tvCode.setText(code1);
     }
