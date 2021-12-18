@@ -4,8 +4,21 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,10 +39,28 @@ public class WelcomeActivity extends AppCompatActivity {
         new StatusBarUtils().setWindowStatusBarColor(WelcomeActivity.this, R.color.white);
         mHandler.postDelayed(new Runnable() {
             public void run() {
-                //你需要跳转的地方的代码
-                Intent intent=new Intent(WelcomeActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                String s = load();
+
+                long LNowDate = new Date().getTime();;
+                Log.e("X",LNowDate+"");
+                if (s==null||s.equals("")){
+                    Intent intent=new Intent(WelcomeActivity.this, ActivityCode.class);
+                    startActivity(intent);
+                    finish();
+                }else if (LNowDate<Long.valueOf(s)){
+                    Intent intent=new Intent(WelcomeActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else if (LNowDate==Long.valueOf(s)){
+                    Toast.makeText(WelcomeActivity.this, "激活码即将到期", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(WelcomeActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else if (LNowDate>Long.valueOf(s)){
+                    Intent intent=new Intent(WelcomeActivity.this, ActivityCode.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         }, 2000); //延迟2秒跳转
 
@@ -40,5 +71,31 @@ public class WelcomeActivity extends AppCompatActivity {
         tvProgress.setProgressColor(Color.BLUE);
         tvProgress.setProgressLineWidth(3);
         tvProgress.reStart();
+    }
+
+    //从“data/data/com.example.项目名/files/data”中读取String
+    private String load() {
+        FileInputStream in = null;
+        BufferedReader reader = null;
+        StringBuilder content = new StringBuilder();
+        try {
+            in = openFileInput("data");//文件名
+            reader = new BufferedReader(new InputStreamReader(in));
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                content.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return content.toString();
     }
 }
