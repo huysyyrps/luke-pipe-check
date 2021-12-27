@@ -4,6 +4,8 @@ import android.app.Application;
 import android.app.NotificationManager;
 import android.content.Context;
 
+import com.taobao.sophix.SophixManager;
+
 /**
  * @author: Allen.
  * @date: 2018/7/25
@@ -19,6 +21,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        SophixManager.getInstance().queryAndLoadNewPatch();
         notificationChannelManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         myApp = this;
         context = getApplicationContext();
