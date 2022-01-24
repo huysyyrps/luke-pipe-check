@@ -35,7 +35,6 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         ButterKnife.bind(this);
-        Toast.makeText(this, "11111", Toast.LENGTH_SHORT).show();
         mHandler = new Handler();
         new StatusBarUtils().setWindowStatusBarColor(WelcomeActivity.this, R.color.white);
         mHandler.postDelayed(new Runnable() {

@@ -1,8 +1,22 @@
 <resources>
-    <string name="app_name">压力管道未焊透定级</string>
+    <string name="app_name">鲁科压力管道评级软件</string>
     <string name="activition_code">获取激活码</string>
     <string name="title_tips">提示</string>
     <string name="title_tips_confim">确定</string>
     <string name="title_tips_cancel">取消</string>
     <string name="copy">复制</string>
+    <string name="title_activity_select">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="straight_pipe">直管的耐压强度校核</string>
+    <string name="elbow_pipe">弯头的耐压强度校核</string>
+
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
 </resources>

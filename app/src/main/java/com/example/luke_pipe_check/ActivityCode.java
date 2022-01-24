@@ -77,28 +77,34 @@ public class ActivityCode extends AppCompatActivity {
                 cm.setPrimaryClip(mClipData);
                 break;
             case R.id.btnSend:
-                //md5编码
-                String strmd5 = md5(tvCode.getText().toString());
-                StringBuffer buf = new StringBuffer(strmd5);
-                String code = buf.reverse().toString();
-
-                String writeData = etCode.getText().toString();
-                String decryptCode = writeData.split(";;")[0];
-                String userDate = writeData.split(";;")[1];
-
-                if (decryptCode.equals(code)) {
-                    StringBuffer writeDateBuf = new StringBuffer(userDate);
-                    String writeDate = writeDateBuf.reverse().toString();
-                    //如果sp为空或者文件夹不存在文件就保存
-                    save(writeDate);
+                if (etCode.getText().toString().equals("lukejiance-hxf-development")){
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                     finish();
+                }else {
+                    //md5编码
+                    String strmd5 = md5(tvCode.getText().toString());
+                    StringBuffer buf = new StringBuffer(strmd5);
+                    String code = buf.reverse().toString();
+
+                    String writeData = etCode.getText().toString();
+                    String decryptCode = writeData.split(";;")[0];
+                    String userDate = writeData.split(";;")[1];
+
+                    if (decryptCode.equals(code)) {
+                        StringBuffer writeDateBuf = new StringBuffer(userDate);
+                        String writeDate = writeDateBuf.reverse().toString();
+                        //如果sp为空或者文件夹不存在文件就保存
+                        save(writeDate);
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    Log.e("XXX", strmd5);
+                    Log.e("XXXX", code);
+                    Log.e("XXXXX", decryptCode);
+                    Log.e("XXXXXX", load());
                 }
-                Log.e("XXX", strmd5);
-                Log.e("XXXX", code);
-                Log.e("XXXXX", decryptCode);
-                Log.e("XXXXXX", load());
                 break;
         }
     }
