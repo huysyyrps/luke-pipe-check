@@ -7,16 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.luke_pipe_check.activity.SelectActivity;
+import com.example.luke_pipe_check.util.StatusBarUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -27,7 +28,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -54,7 +54,7 @@ public class ActivityCode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code);
         ButterKnife.bind(this);
-        new StatusBarUtils().setWindowStatusBarColor(ActivityCode.this, R.color.color_bg_selected);
+        new StatusBarUtils().setWindowStatusBarColor(ActivityCode.this, R.color.black);
         String deviceId = Settings.System.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         String time = String.valueOf(new Date().getTime());
         String strRand = "";
@@ -78,7 +78,7 @@ public class ActivityCode extends AppCompatActivity {
                 break;
             case R.id.btnSend:
                 if (etCode.getText().toString().equals("lukejiance-hxf-development")){
-                    Intent intent = new Intent(this, MainActivity.class);
+                    Intent intent = new Intent(this, SelectActivity.class);
                     startActivity(intent);
                     finish();
                 }else {
@@ -96,7 +96,7 @@ public class ActivityCode extends AppCompatActivity {
                         String writeDate = writeDateBuf.reverse().toString();
                         //如果sp为空或者文件夹不存在文件就保存
                         save(writeDate);
-                        Intent intent = new Intent(this, MainActivity.class);
+                        Intent intent = new Intent(this, SelectActivity.class);
                         startActivity(intent);
                         finish();
                     }

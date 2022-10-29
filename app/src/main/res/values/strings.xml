@@ -19,4 +19,20 @@
         For more information, see https://support.google.com/admob/answer/3052638
     <!- -->
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="work_list">定检项</string>
+    <string name="write_slave_code">请输入激活码</string>
+
+
+    <string name="land_leave">壁厚评级</string>
+    <string name="local_penetration">未焊透/局部减薄评级</string>
+<!--    <string name="local_thinning">局部减薄评级</string>-->
+
+    <string name="pressure_leave">耐压强度</string>
+    <string name="straight">直管评级</string>
+    <string name="elbow">弯头评级</string>
+
+    <string name="welding_leave">焊接评级</string>
+    <string name="circular">圆形评级</string>
+    <string name="line">条形评级</string>
+    circular
 </resources>

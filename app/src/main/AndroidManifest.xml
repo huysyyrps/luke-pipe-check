@@ -20,14 +20,18 @@
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
         <activity android:name=".ActivityCode" />
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".constant.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.SelectActivity"/>
+        <activity android:name=".activity.LandActivity" />
+        <activity android:name=".activity.StraightActivity" />
+        <activity android:name=".activity.ElbowAvtivity" />
+        <activity android:name=".activity.CircularActivity"/>
     </application>
 
 </manifest>

@@ -1,12 +1,10 @@
-package com.example.luke_pipe_check;
+package com.example.luke_pipe_check.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,13 +12,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.luke_pipe_check.R;
+import com.example.luke_pipe_check.util.StatusBarUtils;
+import com.example.luke_pipe_check.util.AlertDialogUtil;
+
 import java.math.BigDecimal;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+//局部减薄
+public class LandActivity extends AppCompatActivity {
     @BindView(R.id.spPipeLevel)
     Spinner spPipeLevel;
     @BindView(R.id.spPipeMaterial)
@@ -47,66 +50,35 @@ public class MainActivity extends AppCompatActivity {
     TextView tvC;
     @BindView(R.id.tvT)
     TextView tvT;
-    @BindView(R.id.tvBPI)
-    TextView tvBPI;
-    @BindView(R.id.tvPL0)
-    TextView tvPL0;
+//    @BindView(R.id.tvPL0)
+//    TextView tvPL0;
     @BindView(R.id.tvLevel)
     TextView tvLevel;
-    boolean first = true;
-    double D = 0;
-    BigDecimal PL0Data = null;
-    AlertDialogUtil alertDialogUtil;
-    BigDecimal CData,TData;
-    String pipeLeave = "", pipeMaterial = "", select = "";
-    String pipeThickness = "", pipeOD = "", userYear = "", nextYear = "", maxWorkMPa = "", defectLength = "", minThickness = "";
-    double maxWorkMPaData, PL0NumData, defectLengthData, pipeODData, leftOther, CNumData, TNumData, pipeThicknessData, minThicknessData, DifferenceData;
     @BindView(R.id.tv_tittle)
     TextView tvTittle;
     @BindView(R.id.tvRight)
     TextView tvRight;
     @BindView(R.id.relativeLayoutHeader)
     RelativeLayout relativeLayoutHeader;
-    private static boolean isExit = false;
+    @BindView(R.id.ivBack)
+    ImageView ivBack;
+    double D = 0;
+    BigDecimal PL0Data = null;
+    AlertDialogUtil alertDialogUtil;
+    BigDecimal CData, TData;
+    String pipeLeave = "", pipeMaterial = "", select = "";
+    String pipeThickness = "", pipeOD = "", userYear = "", nextYear = "", maxWorkMPa = "", defectLength = "", minThickness = "";
+    double maxWorkMPaData, PL0NumData, defectLengthData, pipeODData, leftOther, CNumData, TNumData, pipeThicknessData, minThicknessData, DifferenceData;
 
-    //推出程序
-    Handler mHandler = new Handler() {
 
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            isExit = false;
-        }
-    };
-
-    //推出程序
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            exit();
-            return false;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    private void exit() {
-        if (!isExit) {
-            isExit = true;
-            Toast.makeText(this, "再次返回退出程序", Toast.LENGTH_SHORT).show();
-            mHandler.sendEmptyMessageDelayed(0, 4000);
-        } else {
-            finish();
-            System.exit(0);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        new StatusBarUtils().setWindowStatusBarColor(MainActivity.this, R.color.color_bg_selected);
-        alertDialogUtil = new AlertDialogUtil(MainActivity.this);
+        new StatusBarUtils().setWindowStatusBarColor(LandActivity.this, R.color.color_bg_selected);
+        alertDialogUtil = new AlertDialogUtil(LandActivity.this);
         spinneronCliect();
     }
 
@@ -139,16 +111,14 @@ public class MainActivity extends AppCompatActivity {
             tvC.setText(String.valueOf(CData));
             TData = new BigDecimal(Double.valueOf(minThickness) - Double.valueOf(String.valueOf(CData))).setScale(6, BigDecimal.ROUND_HALF_UP);
             tvT.setText(String.valueOf(TData));
-            BigDecimal BPIData = new BigDecimal(Double.valueOf(defectLength) / Double.valueOf(pipeOD) / 3.141592).setScale(6, BigDecimal.ROUND_HALF_UP);
-            tvBPI.setText(String.valueOf(BPIData));
             if (pipeMaterial.equals("20#钢")) {
                 //20#钢屈服强度为245
                 D = Double.valueOf(pipeOD) / 2;
                 //正平方根Math.sqrt()、Math.log自然对数
                 double a = 2 / Math.sqrt(3) * 245 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
-                if (String.valueOf(a).equals("NaN")){
+                if (String.valueOf(a).equals("NaN")) {
                     Toast.makeText(this, "请检查输入参数", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     PL0Data = new BigDecimal(2 / Math.sqrt(3) * 245 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
                     changeData();
                 }
@@ -156,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
                 //奥氏体不锈钢屈服强度为310
                 D = Double.valueOf(pipeOD) / 2;
                 double a = 2 / Math.sqrt(3) * 310 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
-                if (String.valueOf(a).equals("NaN")){
+                if (String.valueOf(a).equals("NaN")) {
                     Toast.makeText(this, "请检查输入参数", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     PL0Data = new BigDecimal(2 / Math.sqrt(3) * 310 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
                     changeData();
                 }
@@ -166,9 +136,9 @@ public class MainActivity extends AppCompatActivity {
                 //16MnR钢屈服强度为320
                 D = Double.valueOf(pipeOD) / 2;
                 double a = 2 / Math.sqrt(3) * 320 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
-                if (String.valueOf(a).equals("NaN")){
+                if (String.valueOf(a).equals("NaN")) {
                     Toast.makeText(this, "请检查输入参数", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     PL0Data = new BigDecimal(2 / Math.sqrt(3) * 320 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
                     changeData();
                 }
@@ -176,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void changeData(){
-        tvPL0.setText(String.valueOf(PL0Data) + "");
+    public void changeData() {
+//        tvPL0.setText(String.valueOf(PL0Data) + "");
 
         maxWorkMPaData = Double.valueOf(maxWorkMPa);
         PL0NumData = Double.valueOf(String.valueOf(PL0Data));
@@ -204,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
                 getLevel();
             }
         }
-        first = false;
     }
 
 
@@ -376,8 +345,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.tvRight)
-    public void onViewClicked() {
-        setEditData();
+    @OnClick({R.id.tvRight,R.id.ivBack})
+    public void onViewClicked(View view) {
+        switch (view.getId()){
+            case R.id.tvRight:
+                setEditData();
+                break;
+            case R.id.ivBack:
+                finish();
+                break;
+        }
+
     }
 }

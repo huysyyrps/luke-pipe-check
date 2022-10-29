@@ -1,18 +1,13 @@
-package com.example.luke_pipe_check;
+package com.example.luke_pipe_check.util;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+import com.example.luke_pipe_check.R;
 
 
 public class AlertDialogUtil {

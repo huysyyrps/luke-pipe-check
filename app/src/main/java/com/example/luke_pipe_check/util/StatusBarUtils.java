@@ -1,4 +1,4 @@
-package com.example.luke_pipe_check;
+package com.example.luke_pipe_check.util;
 
 import android.app.Activity;
 import android.os.Build;

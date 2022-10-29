@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActivityCode">
-
-    <LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".ActivityCode"
+        android:background="@color/theme_back_color">
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/relativeLayoutHeader"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/color_bg_selected">
+            android:layout_height="30dp"
+            android:background="@color/black">
 
-            <TextView
+        <TextView
                 android:id="@+id/tv_tittle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -25,60 +22,91 @@
                 android:text="@string/activition_code"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
-        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/theme_back_color"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
 
         <TextView
-            android:id="@+id/tvCode"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:layout_weight="1"
-            android:background="@drawable/linelayout_radion"
-            android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:textSize="20sp"
-            android:layout_margin="5dp"
-            android:textIsSelectable="true"/>
+                android:id="@+id/tvCode"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:background="@drawable/linelayout_radion"
+                android:padding="5dp"
+                android:textColor="@color/theme_back_color"
+                android:textIsSelectable="true"
+                android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btnCopy"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/pxqbutton_select"
-            android:text="@string/copy"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+                android:id="@+id/btnCopy"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/pxqbutton_select"
+                android:text="@string/copy"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/linelayout_yello_pxqradion"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="温馨提示:"
+                    android:textStyle="bold"
+                    android:textColor="@color/red" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineHeight="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="\请点击复制上述激活密钥发送管理员，然后将管理员生成的激活码填入下部输入框，点击“确定”即可。"
+                    android:textColor="@color/whith"
+                    android:textSize="13dp" />
+        </LinearLayout>
 
         <EditText
-            android:id="@+id/etCode"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="65dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1.5"
-            android:padding="5dp"
-            android:background="@drawable/linelayout_radion"
-            android:gravity="top|left"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+                android:id="@+id/etCode"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:background="@drawable/linelayout_radion"
+                android:gravity="top|left"
+                android:padding="5dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:hint="@string/write_slave_code"/>
 
         <Button
-            android:id="@+id/btnSend"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/pxqbutton_select"
-            android:text="@string/title_tips_confim"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/pxqbutton_select"
+                android:text="@string/title_tips_confim"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
