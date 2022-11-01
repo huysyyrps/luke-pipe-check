@@ -91,7 +91,7 @@
             </LinearLayout>
 
             <TextView
-                    android:id="@+id/tvStraight"
+                    android:id="@+id/tvStraightOrElbow"
                     android:layout_width="match_parent"
                     style="@style/EditText"
                     android:layout_marginRight="3dp"
@@ -101,19 +101,7 @@
                     android:text="@string/straight"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
-            <View style="@style/HourLine"/>
 
-            <TextView
-                    android:id="@+id/tvElbow"
-                    android:layout_width="match_parent"
-                    style="@style/EditText"
-                    android:layout_marginRight="3dp"
-                    android:layout_marginLeft="3dp"
-                    android:paddingLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/elbow"
-                    android:textColor="@color/black"
-                    android:textSize="14dp" />
         </LinearLayout>
         <View style="@style/HourLine"/>
 
@@ -145,30 +133,31 @@
             </LinearLayout>
 
             <TextView
-                    android:id="@+id/tvCircular"
+                    android:id="@+id/tvCircularOrStrip"
                     android:layout_width="match_parent"
                     style="@style/EditText"
                     android:layout_marginRight="3dp"
                     android:layout_marginLeft="3dp"
                     android:paddingLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/circular"
+                    android:text="@string/circular_line"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
             <View style="@style/HourLine"/>
+
             <TextView
-                    android:id="@+id/tvStrip"
+                    android:id="@+id/tvWeldOther"
                     android:layout_width="match_parent"
                     style="@style/EditText"
                     android:layout_marginRight="3dp"
                     android:layout_marginLeft="3dp"
                     android:paddingLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/line"
+                    android:text="@string/weld_other"
                     android:textColor="@color/black"
                     android:textSize="14dp"/>
+            <View style="@style/HourLine"/>
         </LinearLayout>
-        <View style="@style/HourLine"/>
 
     </LinearLayout>
 

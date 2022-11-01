@@ -1,4 +1,4 @@
-package com.example.luke_pipe_check.activity;
+package com.example.luke_pipe_check.backups;
 
 import android.os.Bundle;
 import android.view.View;
@@ -65,7 +65,7 @@ public class ElbowAvtivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new StatusBarUtils().setWindowStatusBarColor(ElbowAvtivity.this, R.color.color_bg_selected);
-        setContentView(R.layout.activity_select_elbow_avtivity);
+        setContentView(R.layout.activity_elbow);
         ButterKnife.bind(this);
     }
 

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+            android:id="@+id/relativeLayoutHeader"
+            android:layout_width="match_parent"
+            android:background="@color/color_bg_selected"
+            android:layout_height="40dp">
+
+        <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"
+                android:padding="10dp"/>
+
+
+        <TextView
+                android:id="@+id/tv_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/weld_other"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+
+        <TextView
+                android:id="@+id/tvRight"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="计算"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal"
+                    android:background="@color/line">
+                <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="12dp"
+                        android:background="@color/color_selected"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"/>
+                <TextView
+                        style="@style/TextView"
+                        android:layout_height="45dp"
+                        android:text="参数输入"
+                        android:gravity="left|center"
+                        android:textSize="18dp"/>
+            </LinearLayout>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="检测项："/>
+            <Spinner
+                    android:id="@+id/spPipeLevel"
+                    android:layout_width="match_parent"
+                    style="@style/EditText"
+                    android:entries="@array/weld"/>
+            <View style="@style/HourLine"/>
+
+            <!--    咬边        -->
+            <LinearLayout
+                    android:id="@+id/linUndercut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="GC1级管道咬边深度不超过0.5mm,不影响定级："/>
+                <EditText
+                        android:id="@+id/etUndercutGC1"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="GC2、GC3级管道咬边深度不超过0.8mm,不影响定级："/>
+                <EditText
+                        android:id="@+id/etUndercutGC2"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+            </LinearLayout>
+            <!--    错边        -->
+            <LinearLayout
+                    android:id="@+id/linError"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="公称壁厚："/>
+                <EditText
+                        android:id="@+id/etThickness"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="GC1错边量小于公称壁厚的20%且不大于3mm,2级："/>
+                <EditText
+                        android:id="@+id/etErrorGC1"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="GC2/3错边量小于公称壁厚的25%且小于3mm,2级："/>
+                <EditText
+                        android:id="@+id/etErrorGC2"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+            </LinearLayout>
+            <!--    未熔合        -->
+            <LinearLayout
+                    android:id="@+id/linFuse"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="上次定期检验缺陷附近壁厚实测值或名义壁厚："/>
+                <EditText
+                        android:id="@+id/etPipeThickness"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="本次定期检验缺陷附近壁厚实测最小值："/>
+                <EditText
+                        android:id="@+id/etMinThickness"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="两次定期检验间隔年限或首次定检年限："/>
+                <EditText
+                        android:id="@+id/etUserYear"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="预测下一周期年限："/>
+                <EditText
+                        android:id="@+id/etNextYear"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="单个焊接接头中未熔合自身高度的最大值："/>
+                <EditText
+                        android:id="@+id/etOnlyMax"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal"
+                    android:background="@color/line">
+                <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="12dp"
+                        android:background="@color/color_selected"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"/>
+                <TextView
+                        style="@style/TextView"
+                        android:layout_height="45dp"
+                        android:text="计算结果"
+                        android:gravity="left|center"
+                        android:textSize="18dp"/>
+            </LinearLayout>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="级别："/>
+            <LinearLayout
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                        android:id="@+id/tvLevel1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:layout_height="40dp"/>
+                <TextView
+                        android:id="@+id/tvLevel2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:layout_height="40dp"/>
+            </LinearLayout>
+            <View style="@style/HourLine"
+                    android:layout_marginBottom="40dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

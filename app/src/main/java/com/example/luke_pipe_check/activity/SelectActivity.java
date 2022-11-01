@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.luke_pipe_check.R;
+import com.example.luke_pipe_check.backups.ElbowAvtivity;
+import com.example.luke_pipe_check.backups.StripActivity;
 import com.example.luke_pipe_check.util.StatusBarUtils;
 
 import butterknife.BindView;
@@ -24,13 +26,11 @@ import butterknife.OnClick;
 public class SelectActivity extends AppCompatActivity {
     @BindView(R.id.tvPenetration)
     TextView tvPenetration;
-    @BindView(R.id.tvStraight)
-    TextView tvStraight;
-    @BindView(R.id.tvElbow)
-    TextView tvElbow;
-    @BindView(R.id.tvCircular)
-    TextView tvCircular;
-    @BindView(R.id.tvStrip)
+    @BindView(R.id.tvStraightOrElbow)
+    TextView tvStraightOrElbow;
+    @BindView(R.id.tvCircularOrStrip)
+    TextView tvCircularOrStrip;
+    @BindView(R.id.tvWeldOther)
     TextView tvStrip;
 
     private static boolean isExit = false;
@@ -74,27 +74,23 @@ public class SelectActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.tvPenetration, R.id.tvStraight, R.id.tvElbow, R.id.tvCircular, R.id.tvStrip})
+    @OnClick({R.id.tvPenetration, R.id.tvStraightOrElbow, R.id.tvCircularOrStrip, R.id.tvWeldOther})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvPenetration:
                 intent = new Intent(this, LandActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.tvStraight:
-                intent = new Intent(this, StraightActivity.class);
+            case R.id.tvStraightOrElbow:
+                intent = new Intent(this, StraightOrElbowActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.tvElbow:
-                intent = new Intent(this, ElbowAvtivity.class);
+            case R.id.tvCircularOrStrip:
+                intent = new Intent(this, CircularOrStripActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.tvCircular:
-                intent = new Intent(this, CircularActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.tvStrip:
-                intent = new Intent(this, StripActivity.class);
+            case R.id.tvWeldOther:
+                intent = new Intent(this, WeldOtherActivity.class);
                 startActivity(intent);
                 break;
         }

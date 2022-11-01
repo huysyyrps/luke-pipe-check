@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutHeader"
+        android:layout_width="match_parent"
+        android:background="@color/color_bg_selected"
+        android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+                android:padding="10dp"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/tv_tittle"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvRight"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:layout_alignParentRight="true"
+            android:text="计算"
+            android:layout_marginRight="10dp"
+            android:layout_centerInParent="true"
+            android:layout_width="55dp"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:background="@color/line">
+                <ImageView
+                    android:layout_width="4dp"
+                    android:layout_height="12dp"
+                    android:background="@color/color_selected"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"/>
+                <TextView
+                    style="@style/TextView"
+                    android:layout_height="45dp"
+                    android:text="参数输入"
+                    android:gravity="left|center"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="缺陷选择："/>
+                <Spinner
+                        android:id="@+id/spPSelect"
+                        android:layout_width="match_parent"
+                        style="@style/EditText"
+                        android:entries="@array/defect" />
+                <View style="@style/HourLine"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:id="@+id/linStripTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                        android:id="@+id/linStripLeavel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            style="@style/TextViewGrade"
+                            android:layout_width="match_parent"
+                            android:text="管道级别："/>
+                    <Spinner
+                            android:id="@+id/spPipeLevel"
+                            android:layout_width="match_parent"
+                            style="@style/EditText"
+                            android:entries="@array/pipelevel" />
+                    <View style="@style/HourLine"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/linStripOD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            style="@style/TextViewGrade"
+                            android:layout_width="match_parent"
+                            android:text="D-管道外径："/>
+                    <EditText
+                            android:id="@+id/etPipeOD"
+                            android:layout_width="match_parent"
+                            android:inputType="number|numberDecimal"
+                            style="@style/EditText"/>
+                    <View style="@style/HourLine"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="上次定期检验缺陷附近壁厚实测值或名义壁厚："/>
+            <EditText
+                    android:id="@+id/etPipeThickness"
+                    android:layout_width="match_parent"
+                    android:inputType="number|numberDecimal"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="本次定期检验缺陷附近壁厚实测最小值："/>
+            <EditText
+                    android:id="@+id/etPipeThicknessSC"
+                    android:layout_width="match_parent"
+                    android:inputType="number|numberDecimal"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="两次定期检验间隔年限或首次定检年限："/>
+            <EditText
+                    android:id="@+id/etYear"
+                    android:layout_width="match_parent"
+                    android:inputType="number|numberDecimal"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="预测下一周期年限："/>
+            <EditText
+                    android:id="@+id/etNextYear"
+                    android:layout_width="match_parent"
+                    android:inputType="number|numberDecimal"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+            <!--            圆形缺陷-->
+            <LinearLayout
+                    android:id="@+id/linCircular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="圆形缺陷率："/>
+                <EditText
+                        android:id="@+id/etCircularRate"
+                        android:layout_width="match_parent"
+                        style="@style/EditText"
+                        android:inputType="number|numberDecimal"/>
+                <View style="@style/HourLine"/>
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="圆形缺陷长径："/>
+                <EditText
+                        android:id="@+id/etCircularDiameter"
+                        android:layout_width="match_parent"
+                        style="@style/EditText"
+                        android:inputType="number|numberDecimal"/>
+                <View style="@style/HourLine"/>
+            </LinearLayout>
+            <!--            条形缺陷-->
+            <LinearLayout
+                    android:id="@+id/linStripBot"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="管道条形缺陷自身高度或宽度的最大值："/>
+                <EditText
+                        android:id="@+id/etStripWidth"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="管道条形缺陷总长度："/>
+                <EditText
+                        android:id="@+id/etStripHeight"
+                        android:layout_width="match_parent"
+                        android:inputType="number|numberDecimal"
+                        style="@style/EditText"/>
+                <View style="@style/HourLine"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:background="@color/line">
+                <ImageView
+                    android:layout_width="4dp"
+                    android:layout_height="12dp"
+                    android:background="@color/color_selected"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    style="@style/TextView"
+                    android:layout_height="45dp"
+                    android:text="未焊透缺陷级别"
+                    android:gravity="left|center"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="C-下一检验周期局部减薄深度扩展量的估计值"/>
+            <TextView
+                    android:id="@+id/tvC"
+                        android:layout_width="match_parent"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="腐蚀速率："/>
+            <TextView
+                    android:id="@+id/tvFSSL"
+                    android:layout_width="match_parent"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="te-有效厚度："/>
+            <TextView
+                    android:id="@+id/tvTe"
+                    android:layout_width="match_parent"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"/>
+
+            <TextView
+                    style="@style/TextViewGrade"
+                    android:layout_width="match_parent"
+                    android:text="级别："/>
+            <TextView
+                    android:id="@+id/tvLevel"
+                    android:layout_width="match_parent"
+                    style="@style/EditText"/>
+            <View style="@style/HourLine"
+                android:layout_marginBottom="40dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

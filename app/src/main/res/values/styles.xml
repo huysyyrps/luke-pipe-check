@@ -19,13 +19,13 @@
     <!--自定义TextView-->
     <style name="TextViewGrade">
         <item name="android:layout_width">150dp</item>
-        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_height">25dp</item>
         <item name="android:paddingTop">3dp</item>
         <item name="android:background">@null</item>
         <item name="android:gravity">center|left</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginLeft">15dp</item>
-        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
@@ -46,8 +46,8 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
-        <item name="android:paddingLeft">15dp</item>
-        <item name="android:textSize">15dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
     <!--自定义横向分割线-->
@@ -55,7 +55,7 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@color/shouye</item>
-        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginTop">10dp</item>
     </style>
 
 </resources>

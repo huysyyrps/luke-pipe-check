@@ -15,4 +15,21 @@
         <item>局部减薄</item>
         <item>未焊透</item>
     </string-array>
+
+
+    <string-array name="defect">
+        <item>圆形缺陷</item>
+        <item>条形缺陷</item>
+    </string-array>
+
+    <string-array name="pipe">
+        <item>直管</item>
+        <item>弯头</item>
+    </string-array>
+
+    <string-array name="weld">
+        <item>咬边</item>
+        <item>错边</item>
+        <item>未熔合</item>
+    </string-array>
 </resources>

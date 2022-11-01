@@ -13,8 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.luke_pipe_check.R;
-import com.example.luke_pipe_check.util.StatusBarUtils;
 import com.example.luke_pipe_check.util.AlertDialogUtil;
+import com.example.luke_pipe_check.util.StatusBarUtils;
 
 import java.math.BigDecimal;
 
@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-//局部减薄
+//局部减薄/未焊透
 public class LandActivity extends AppCompatActivity {
     @BindView(R.id.spPipeLevel)
     Spinner spPipeLevel;
@@ -50,7 +50,7 @@ public class LandActivity extends AppCompatActivity {
     TextView tvC;
     @BindView(R.id.tvT)
     TextView tvT;
-//    @BindView(R.id.tvPL0)
+    //    @BindView(R.id.tvPL0)
 //    TextView tvPL0;
     @BindView(R.id.tvLevel)
     TextView tvLevel;
@@ -60,9 +60,12 @@ public class LandActivity extends AppCompatActivity {
     TextView tvRight;
     @BindView(R.id.relativeLayoutHeader)
     RelativeLayout relativeLayoutHeader;
+    @BindView(R.id.etStrength)
+    EditText etStrength;
     @BindView(R.id.ivBack)
     ImageView ivBack;
     double D = 0;
+    int strength;
     BigDecimal PL0Data = null;
     AlertDialogUtil alertDialogUtil;
     BigDecimal CData, TData;
@@ -115,31 +118,31 @@ public class LandActivity extends AppCompatActivity {
                 //20#钢屈服强度为245
                 D = Double.valueOf(pipeOD) / 2;
                 //正平方根Math.sqrt()、Math.log自然对数
-                double a = 2 / Math.sqrt(3) * 245 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
+                double a = 2 / Math.sqrt(3) * strength * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
                 if (String.valueOf(a).equals("NaN")) {
                     Toast.makeText(this, "请检查输入参数", Toast.LENGTH_SHORT).show();
                 } else {
-                    PL0Data = new BigDecimal(2 / Math.sqrt(3) * 245 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
+                    PL0Data = new BigDecimal(2 / Math.sqrt(3) * strength * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
                     changeData();
                 }
             } else if (pipeMaterial.equals("奥氏体不锈钢")) {
                 //奥氏体不锈钢屈服强度为310
                 D = Double.valueOf(pipeOD) / 2;
-                double a = 2 / Math.sqrt(3) * 310 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
+                double a = 2 / Math.sqrt(3) * strength * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
                 if (String.valueOf(a).equals("NaN")) {
                     Toast.makeText(this, "请检查输入参数", Toast.LENGTH_SHORT).show();
                 } else {
-                    PL0Data = new BigDecimal(2 / Math.sqrt(3) * 310 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
+                    PL0Data = new BigDecimal(2 / Math.sqrt(3) * strength * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
                     changeData();
                 }
             } else if (pipeMaterial.equals("16MnR")) {
                 //16MnR钢屈服强度为320
                 D = Double.valueOf(pipeOD) / 2;
-                double a = 2 / Math.sqrt(3) * 320 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
+                double a = 2 / Math.sqrt(3) * strength * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))));
                 if (String.valueOf(a).equals("NaN")) {
                     Toast.makeText(this, "请检查输入参数", Toast.LENGTH_SHORT).show();
                 } else {
-                    PL0Data = new BigDecimal(2 / Math.sqrt(3) * 320 * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
+                    PL0Data = new BigDecimal(2 / Math.sqrt(3) * strength * Math.log(D / (D - Double.valueOf(minThickness) + Double.valueOf(String.valueOf(CData))))).setScale(6, BigDecimal.ROUND_HALF_UP);
                     changeData();
                 }
             }
@@ -318,6 +321,14 @@ public class LandActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 String[] languages = getResources().getStringArray(R.array.pipematerial);
                 pipeMaterial = languages[pos];
+                if (pipeMaterial.equals("20#钢")){
+                    strength = 245;
+                }else if (pipeMaterial.equals("奥氏体不锈钢")){
+                    strength = 310;
+                }else if (pipeMaterial.equals("16MnR")){
+                    strength = 320;
+                }
+                etStrength.setText(strength+"");
             }
 
             @Override
@@ -345,9 +356,9 @@ public class LandActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.tvRight,R.id.ivBack})
+    @OnClick({R.id.tvRight, R.id.ivBack})
     public void onViewClicked(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.tvRight:
                 setEditData();
                 break;
