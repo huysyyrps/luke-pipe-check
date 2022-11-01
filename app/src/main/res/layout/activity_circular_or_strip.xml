@@ -72,15 +72,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="缺陷选择："/>
-                <Spinner
-                        android:id="@+id/spPSelect"
+                        android:layout_height="25dp"
+                        app:header_title="缺陷选择 "/>
+                <LinearLayout
                         android:layout_width="match_parent"
-                        style="@style/EditText"
-                        android:entries="@array/defect" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/linelayout_qradion">
+                    <Spinner
+                            android:id="@+id/spPSelect"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:entries="@array/pipe"/>
+                </LinearLayout>
                 <View style="@style/HourLine"/>
             </LinearLayout>
 
@@ -95,15 +102,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
-                    <TextView
-                            style="@style/TextViewGrade"
+                    <com.example.luke_pipe_check.view.MyTextView
                             android:layout_width="match_parent"
-                            android:text="管道级别："/>
-                    <Spinner
-                            android:id="@+id/spPipeLevel"
+                            android:layout_height="25dp"
+                            app:header_title="管道级别 "/>
+                    <LinearLayout
                             android:layout_width="match_parent"
-                            style="@style/EditText"
-                            android:entries="@array/pipelevel" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/linelayout_qradion">
+                        <Spinner
+                                android:id="@+id/spPipeLevel"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:entries="@array/pipe"/>
+                    </LinearLayout>
                     <View style="@style/HourLine"/>
                 </LinearLayout>
 
@@ -112,10 +126,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
-                    <TextView
-                            style="@style/TextViewGrade"
+                    <com.example.luke_pipe_check.view.MyTextView
                             android:layout_width="match_parent"
-                            android:text="D-管道外径："/>
+                            android:layout_height="25dp"
+                            app:header_title="D-管道外径 "/>
                     <EditText
                             android:id="@+id/etPipeOD"
                             android:layout_width="match_parent"
@@ -125,10 +139,10 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="上次定期检验缺陷附近壁厚实测值或名义壁厚："/>
+                    android:layout_height="25dp"
+                    app:header_title="上次定期检验缺陷附近壁厚实测值或名义壁厚 "/>
             <EditText
                     android:id="@+id/etPipeThickness"
                     android:layout_width="match_parent"
@@ -136,10 +150,10 @@
                     style="@style/EditText"/>
             <View style="@style/HourLine"/>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="本次定期检验缺陷附近壁厚实测最小值："/>
+                    android:layout_height="25dp"
+                    app:header_title="本次定期检验缺陷附近壁厚实测最小值 "/>
             <EditText
                     android:id="@+id/etPipeThicknessSC"
                     android:layout_width="match_parent"
@@ -147,10 +161,10 @@
                     style="@style/EditText"/>
             <View style="@style/HourLine"/>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="两次定期检验间隔年限或首次定检年限："/>
+                    android:layout_height="25dp"
+                    app:header_title="两次定期检验间隔年限或首次定检年限 "/>
             <EditText
                     android:id="@+id/etYear"
                     android:layout_width="match_parent"
@@ -158,10 +172,10 @@
                     style="@style/EditText"/>
             <View style="@style/HourLine"/>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="预测下一周期年限："/>
+                    android:layout_height="25dp"
+                    app:header_title="预测下一周期年限 "/>
             <EditText
                     android:id="@+id/etNextYear"
                     android:layout_width="match_parent"
@@ -174,10 +188,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="圆形缺陷率："/>
+                        android:layout_height="25dp"
+                        app:header_title="圆形缺陷率 "/>
                 <EditText
                         android:id="@+id/etCircularRate"
                         android:layout_width="match_parent"
@@ -185,10 +199,10 @@
                         android:inputType="number|numberDecimal"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="圆形缺陷长径："/>
+                        android:layout_height="25dp"
+                        app:header_title="圆形缺陷长径 "/>
                 <EditText
                         android:id="@+id/etCircularDiameter"
                         android:layout_width="match_parent"
@@ -203,10 +217,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="管道条形缺陷自身高度或宽度的最大值："/>
+                        android:layout_height="25dp"
+                        app:header_title="管道条形缺陷自身高度或宽度的最大值 "/>
                 <EditText
                         android:id="@+id/etStripWidth"
                         android:layout_width="match_parent"
@@ -214,10 +228,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="管道条形缺陷总长度："/>
+                        android:layout_height="25dp"
+                        app:header_title="管道条形缺陷总长度 "/>
                 <EditText
                         android:id="@+id/etStripHeight"
                         android:layout_width="match_parent"

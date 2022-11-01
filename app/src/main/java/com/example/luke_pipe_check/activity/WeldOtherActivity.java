@@ -3,6 +3,7 @@ package com.example.luke_pipe_check.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -81,6 +82,9 @@ public class WeldOtherActivity extends AppCompatActivity {
      * spinner点击事件
      */
     private void spinneronCliect() {
+        ArrayAdapter<String> pSelectAdapter = new ArrayAdapter<>(this, R.layout.adapter_item_layout, getResources().getStringArray(R.array.weld));
+        spPipeLevel.setAdapter(pSelectAdapter);
+        spPipeLevel.setSelection(0);
         spPipeLevel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {

@@ -68,15 +68,22 @@
                         android:textSize="18dp"/>
             </LinearLayout>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="检测项："/>
-            <Spinner
-                    android:id="@+id/spPipeLevel"
+                    android:layout_height="25dp"
+                    app:header_title="检测项 "/>
+            <LinearLayout
                     android:layout_width="match_parent"
-                    style="@style/EditText"
-                    android:entries="@array/weld"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/linelayout_qradion">
+                <Spinner
+                        android:id="@+id/spPipeLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:entries="@array/pipe"/>
+            </LinearLayout>
             <View style="@style/HourLine"/>
 
             <!--    咬边        -->
@@ -85,10 +92,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="GC1级管道咬边深度不超过0.5mm,不影响定级："/>
+                        android:layout_height="25dp"
+                        app:header_title="GC1级管道咬边深度不超过0.5mm,不影响定级 "/>
                 <EditText
                         android:id="@+id/etUndercutGC1"
                         android:layout_width="match_parent"
@@ -97,10 +104,10 @@
                 <View style="@style/HourLine"/>
 
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="GC2、GC3级管道咬边深度不超过0.8mm,不影响定级："/>
+                        android:layout_height="25dp"
+                        app:header_title="GC2、GC3级管道咬边深度不超过0.8mm,不影响定级 "/>
                 <EditText
                         android:id="@+id/etUndercutGC2"
                         android:layout_width="match_parent"
@@ -115,10 +122,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="公称壁厚："/>
+                        android:layout_height="25dp"
+                        app:header_title="公称壁厚 "/>
                 <EditText
                         android:id="@+id/etThickness"
                         android:layout_width="match_parent"
@@ -126,10 +133,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="GC1错边量小于公称壁厚的20%且不大于3mm,2级："/>
+                        android:layout_height="25dp"
+                        app:header_title="GC1错边量小于公称壁厚的20%且不大于3mm,2级 "/>
                 <EditText
                         android:id="@+id/etErrorGC1"
                         android:layout_width="match_parent"
@@ -138,10 +145,10 @@
                 <View style="@style/HourLine"/>
 
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="GC2/3错边量小于公称壁厚的25%且小于3mm,2级："/>
+                        android:layout_height="25dp"
+                        app:header_title="GC2/3错边量小于公称壁厚的25%且小于3mm,2级 "/>
                 <EditText
                         android:id="@+id/etErrorGC2"
                         android:layout_width="match_parent"
@@ -156,10 +163,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="上次定期检验缺陷附近壁厚实测值或名义壁厚："/>
+                        android:layout_height="25dp"
+                        app:header_title="上次定期检验缺陷附近壁厚实测值或名义壁厚 "/>
                 <EditText
                         android:id="@+id/etPipeThickness"
                         android:layout_width="match_parent"
@@ -167,10 +174,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="本次定期检验缺陷附近壁厚实测最小值："/>
+                        android:layout_height="25dp"
+                        app:header_title="本次定期检验缺陷附近壁厚实测最小值 "/>
                 <EditText
                         android:id="@+id/etMinThickness"
                         android:layout_width="match_parent"
@@ -178,10 +185,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="两次定期检验间隔年限或首次定检年限："/>
+                        android:layout_height="25dp"
+                        app:header_title="两次定期检验间隔年限或首次定检年限 "/>
                 <EditText
                         android:id="@+id/etUserYear"
                         android:layout_width="match_parent"
@@ -190,10 +197,10 @@
                 <View style="@style/HourLine"/>
 
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="预测下一周期年限："/>
+                        android:layout_height="25dp"
+                        app:header_title="预测下一周期年限 "/>
                 <EditText
                         android:id="@+id/etNextYear"
                         android:layout_width="match_parent"
@@ -201,10 +208,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="单个焊接接头中未熔合自身高度的最大值："/>
+                        android:layout_height="25dp"
+                        app:header_title="单个焊接接头中未熔合自身高度的最大值 "/>
                 <EditText
                         android:id="@+id/etOnlyMax"
                         android:layout_width="match_parent"

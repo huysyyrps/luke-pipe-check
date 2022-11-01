@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/relativeLayoutHeader"
@@ -73,22 +74,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="管材选择："/>
-                <Spinner
-                        android:id="@+id/spPSelect"
+                        android:layout_height="25dp"
+                        app:header_title="管材选择 "/>
+                <LinearLayout
                         android:layout_width="match_parent"
-                        style="@style/EditText"
-                        android:entries="@array/pipe" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/linelayout_qradion">
+                    <Spinner
+                            android:id="@+id/spPSelect"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:entries="@array/pipe"/>
+                </LinearLayout>
                 <View style="@style/HourLine"/>
             </LinearLayout>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="p-允许（监控）使用压力："/>
+                    android:layout_height="25dp"
+                    app:header_title="p-允许（监控）使用压力 "/>
             <EditText
                     android:id="@+id/etWorkMPa"
                     android:layout_width="match_parent"
@@ -96,10 +104,10 @@
                     style="@style/EditText"/>
             <View style="@style/HourLine"/>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="D-管子外径："/>
+                    android:layout_height="25dp"
+                    app:header_title="D-管子外径 "/>
             <EditText
                     android:id="@+id/etPipeOD"
                     android:layout_width="match_parent"
@@ -107,10 +115,10 @@
                     style="@style/EditText"/>
             <View style="@style/HourLine"/>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="S-允许（监控）使用温度下金属材料的许用应力："/>
+                    android:layout_height="25dp"
+                    app:header_title="S-允许使用温度下金属材料的许用应力 "/>
             <EditText
                     android:id="@+id/etUserMpa"
                     android:layout_width="match_parent"
@@ -118,10 +126,10 @@
                     style="@style/EditText"/>
             <View style="@style/HourLine"/>
 
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="Y-计算系数(参考下图)："/>
+                    android:layout_height="25dp"
+                    app:header_title="Y-计算系数(参考下图)力 "/>
             <EditText
                     android:id="@+id/etCCoefficient"
                     android:layout_width="match_parent"
@@ -136,10 +144,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                 android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="本次实测直管壁厚最小值："/>
+                        android:layout_height="25dp"
+                        app:header_title="本次实测直管壁厚最小值 "/>
                 <EditText
                         android:id="@+id/etMinThickness"
                         android:layout_width="match_parent"
@@ -154,10 +162,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="R-弯头的弯曲半径："/>
+                        android:layout_height="25dp"
+                        app:header_title="R-弯头的弯曲半径 "/>
                 <EditText
                         android:id="@+id/etRadius"
                         android:layout_width="match_parent"
@@ -165,10 +173,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="本次实测弯头内侧壁厚最小值："/>
+                        android:layout_height="25dp"
+                        app:header_title="本次实测弯头内侧壁厚最小值 "/>
                 <EditText
                         android:id="@+id/etWithinMin"
                         android:layout_width="match_parent"
@@ -176,10 +184,10 @@
                         style="@style/EditText"/>
                 <View style="@style/HourLine"/>
 
-                <TextView
-                        style="@style/TextViewGrade"
+                <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
-                        android:text="本次实测弯头外侧壁厚最小值："/>
+                        android:layout_height="25dp"
+                        app:header_title="本次实测弯头外侧壁厚最小值 "/>
                 <EditText
                         android:id="@+id/etOutMin"
                         android:layout_width="match_parent"
@@ -188,11 +196,10 @@
                 <View style="@style/HourLine"/>
             </LinearLayout>
 
-
-            <TextView
-                    style="@style/TextViewGrade"
+            <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
-                    android:text="φ-焊件的纵向焊接接头系数或铸件质量系数，取1.0："/>
+                    android:layout_height="25dp"
+                    app:header_title="φ-焊件的纵向焊接接头系数或铸件质量系数，取1.0 "/>
             <TextView
                     android:id="@+id/etPipeCoefficient"
                     android:layout_width="match_parent"

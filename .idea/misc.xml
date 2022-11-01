@@ -7,9 +7,11 @@
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/drawable/linelayout_yello_backqradion.xml" value="0.1855" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/drawable/linelayout_yello_pxqradion.xml" value="0.1855" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_circular.xml" value="0.33" />
+        <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_circular_or_strip.xml" value="0.231722958529286" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_code.xml" value="0.26875" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_elbow.xml" value="0.30055579307396324" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_main.xml" value="0.26875" />
+        <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_mytextview.xml" value="0.231722958529286" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_select.xml" value="0.26458333333333334" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_select1.xml" value="0.2786458333333333" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_select_elbow_avtivity.xml" value="0.2708333333333333" />
@@ -18,6 +20,7 @@
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_strip.xml" value="0.35052083333333334" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_welcome.xml" value="0.36614583333333334" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/activity_weld_other.xml" value="0.30055579307396324" />
+        <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/adapter_item_layout.xml" value="0.231722958529286" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/child_item.xml" value="0.328125" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/dialog_with_one_title.xml" value="0.31354166666666666" />
         <entry key="..\:/LuKe-item/lukepipecheck/app/src/main/res/layout/partent_item.xml" value="0.26458333333333334" />

@@ -3,6 +3,7 @@ package com.example.luke_pipe_check.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -94,6 +95,9 @@ public class CircularOrStripActivity extends AppCompatActivity {
      * spinner点击事件
      */
     private void spinnerSelect() {
+        ArrayAdapter<String> pSelectAdapter = new ArrayAdapter<>(this, R.layout.adapter_item_layout, getResources().getStringArray(R.array.defect));
+        spPSelect.setAdapter(pSelectAdapter);
+        spPSelect.setSelection(0);
         spPSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -115,6 +119,10 @@ public class CircularOrStripActivity extends AppCompatActivity {
                 // Another interface callback
             }
         });
+
+        ArrayAdapter<String> spPipeLevelAdapter = new ArrayAdapter<>(this, R.layout.adapter_item_layout, getResources().getStringArray(R.array.pipelevel));
+        spPipeLevel.setAdapter(spPipeLevelAdapter);
+        spPipeLevel.setSelection(0);
         spPipeLevel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {

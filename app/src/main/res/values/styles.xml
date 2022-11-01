@@ -58,4 +58,10 @@
         <item name="android:layout_marginTop">10dp</item>
     </style>
 
+    <!--自定义header属性-->
+    <declare-styleable name="myTextView">
+        <attr name="header_title" format="string" />
+        <attr name="header_is_title_visiable" format="boolean" />
+        <attr name="header_is_left_iv_visiable" format="boolean" />
+    </declare-styleable>
 </resources>
