@@ -54,7 +54,7 @@ public class ActivityCode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code);
         ButterKnife.bind(this);
-        new StatusBarUtils().setWindowStatusBarColor(ActivityCode.this, R.color.black);
+        new StatusBarUtils().setWindowStatusBarColor(ActivityCode.this, R.color.color_bg_selected);
         String deviceId = Settings.System.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         String time = String.valueOf(new Date().getTime());
         String strRand = "";

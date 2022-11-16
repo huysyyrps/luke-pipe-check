@@ -5,14 +5,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ActivityCode"
-        android:background="@color/theme_back_color">
+        tools:context=".ActivityCode">
 
     <RelativeLayout
             android:id="@+id/relativeLayoutHeader"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:background="@color/black">
+            android:background="@color/color_bg_selected">
 
         <TextView
                 android:id="@+id/tv_tittle"
@@ -27,7 +26,6 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/theme_back_color"
             android:orientation="vertical"
             android:layout_margin="20dp">
 
@@ -58,7 +56,7 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/linelayout_yello_pxqradion"
@@ -79,7 +77,7 @@
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     android:text="\请点击复制上述激活密钥发送管理员，然后将管理员生成的激活码填入下部输入框，点击“确定”即可。"
-                    android:textColor="@color/whith"
+                    android:textColor="@color/black"
                     android:textSize="13dp" />
         </LinearLayout>
 

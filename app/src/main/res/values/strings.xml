@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">鲁科压力管道评级软件</string>
+    <string name="comp_name">济宁鲁科检测器材有限公司</string>
+    <string name="comp_phone">联系电话：0537-6588260</string>
     <string name="activition_code">获取激活码</string>
     <string name="title_tips">提示</string>
     <string name="title_tips_confim">确定</string>
@@ -43,5 +45,7 @@
     <string name="two_leave">2级</string>
     <string name="there_leave">3级</string>
     <string name="four_leave">4级</string>
+
+    <string name="in_project">进入程序</string>
     circular
 </resources>

@@ -13,6 +13,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            v1SigningEnabled true  //打包时默认勾选 V1（Jar Signature）
+            v2SigningEnabled true  //打包时默认勾选 V2（Full APK Signature）
+        }
+    }
+
     buildTypes {
             release {
                 minifyEnabled false
@@ -36,4 +43,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'io.github.youth5201314:banner:2.2.2'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
 }
