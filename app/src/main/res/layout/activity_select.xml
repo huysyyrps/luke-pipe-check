@@ -101,13 +101,13 @@
                         android:layout_marginLeft="5dp"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
-                        android:layout_weight="1.1"
-                        android:background="@color/black"
+                        android:layout_weight="1"
+                        android:background="#020929"
                         android:orientation="vertical">
 
                     <ImageView
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
                             android:src="@drawable/ic_circularorstrip"
                             android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"/>
@@ -129,15 +129,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal">
-
+<!--//#020929-->
                 <LinearLayout
                         android:id="@+id/linStraightOrElbow"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
-                        android:layout_weight="1.1"
+                        android:layout_weight="1"
                         android:layout_marginRight="5dp"
-                        android:background="#020929"
+                        android:background="@color/darkslateblue"
                         android:orientation="vertical">
 
                     <ImageView
@@ -163,12 +163,12 @@
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
                         android:layout_weight="1"
-                        android:background="@color/holo_red_light"
+                        android:background="@color/holo_green_light"
                         android:orientation="vertical">
 
                     <ImageView
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="20dp"
                             android:src="@drawable/ic_weldother" />
