@@ -129,7 +129,6 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal">
-<!--//#020929-->
                 <LinearLayout
                         android:id="@+id/linStraightOrElbow"
                         android:layout_width="0dp"
