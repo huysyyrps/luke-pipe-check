@@ -37,7 +37,7 @@
     <string name="circular_line">圆形/条形缺陷评级</string>
     <string name="line">条形评级</string>
 
-    <string name="weld_other">咬边/错边/未焊透评级</string>
+    <string name="weld_other">咬边/错边/未熔合评级</string>
 
     <string name="no_influence">不影响定级</string>
     <string name="influence">按局部减薄定级</string>
@@ -47,5 +47,6 @@
     <string name="four_leave">4级</string>
 
     <string name="in_project">进入程序</string>
+    <string name="leavecode_error">激活码错误</string>
     circular
 </resources>

@@ -73,7 +73,7 @@ public class WeldOtherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weld_other);
-        new StatusBarUtils().setWindowStatusBarColor(WeldOtherActivity.this, R.color.color_bg_selected);
+        new StatusBarUtils().setWindowStatusBarColor(WeldOtherActivity.this, R.color.black);
         ButterKnife.bind(this);
         spinneronCliect();
     }
@@ -127,7 +127,7 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel1.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC1 = getResources().getString(R.string.no_influence);
-                        tvLevel1.setTextColor(getResources().getColor(R.color.black));
+                        tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
                     }
                     tvLevel1.setText("GC1:" + leaveGC1);
                 }
@@ -138,7 +138,7 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel2.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC2 = getResources().getString(R.string.no_influence);
-                        tvLevel2.setTextColor(getResources().getColor(R.color.black));
+                        tvLevel2.setTextColor(getResources().getColor(R.color.theme_color));
                     }
                     tvLevel2.setText("GC2/3:" + leaveGC2);
                 }
@@ -159,7 +159,7 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel1.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC1 = getResources().getString(R.string.two_leave);
-                        tvLevel1.setTextColor(getResources().getColor(R.color.black));
+                        tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
                     }
                     tvLevel1.setText("GC1:" + leaveGC1);
                 }
@@ -170,7 +170,7 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel2.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC2 = getResources().getString(R.string.two_leave);
-                        tvLevel2.setTextColor(getResources().getColor(R.color.black));
+                        tvLevel2.setTextColor(getResources().getColor(R.color.theme_color));
                     }
                     tvLevel2.setText("GC2/3:" + leaveGC2);
                 }
@@ -211,7 +211,7 @@ public class WeldOtherActivity extends AppCompatActivity {
             if (teData>=2.5&&teData<4){
                 if (onlyMax<=0.15*teData && onlyMax<=0.5){
                     tvLevel1.setText(R.string.no_influence);
-                    tvLevel1.setTextColor(getResources().getColor(R.color.black));
+                    tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
                 }else {
                     tvLevel1.setText(R.string.four_leave);
                     tvLevel1.setTextColor(getResources().getColor(R.color.red));
@@ -235,12 +235,12 @@ public class WeldOtherActivity extends AppCompatActivity {
             if (teData>=20){
                 if (onlyMax<=3.0){
                     tvLevel1.setText(R.string.two_leave);
-                    tvLevel1.setTextColor(getResources().getColor(R.color.black));
+                    tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
                 }else {
                     double threeLeaveData = 0.20*teData < 5.0 ? 0.20*teData : 5.0;
                     if (onlyMax<=threeLeaveData){
                         tvLevel1.setText(R.string.there_leave);
-                        tvLevel1.setTextColor(getResources().getColor(R.color.black));
+                        tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
                     }else {
                         tvLevel1.setText(R.string.four_leave);
                         tvLevel1.setTextColor(getResources().getColor(R.color.red));
@@ -253,10 +253,10 @@ public class WeldOtherActivity extends AppCompatActivity {
     private void leaveContrast(double onlyMax, double twoLeaveData, double threeLeaveData){
         if (onlyMax<=twoLeaveData){
             tvLevel1.setText(R.string.two_leave);
-            tvLevel1.setTextColor(getResources().getColor(R.color.black));
+            tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
         }else if (onlyMax<=threeLeaveData){
             tvLevel1.setText(R.string.there_leave);
-            tvLevel1.setTextColor(getResources().getColor(R.color.black));
+            tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
         }else if (onlyMax>threeLeaveData){
             tvLevel1.setText(R.string.four_leave);
             tvLevel1.setTextColor(getResources().getColor(R.color.red));

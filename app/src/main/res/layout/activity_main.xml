@@ -4,12 +4,13 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/theme_back_color">
 
     <RelativeLayout
             android:id="@+id/relativeLayoutHeader"
             android:layout_width="match_parent"
-            android:background="@color/color_bg_selected"
+            android:background="@color/black"
             android:layout_height="40dp">
 
         <ImageView
@@ -31,15 +32,16 @@
 
         <TextView
                 android:id="@+id/tvRight"
-                android:textColor="@android:color/white"
-                android:textSize="17sp"
-                android:layout_alignParentRight="true"
-                android:text="计算"
-                android:layout_marginRight="10dp"
-                android:layout_centerInParent="true"
                 android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
                 android:gravity="center"
-                android:layout_height="wrap_content" />
+                android:text="计算"
+                android:background="@drawable/pxqbutton_select"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
     </RelativeLayout>
 
     <ScrollView
@@ -51,9 +53,9 @@
                 android:orientation="vertical">
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="25dp"
                     android:orientation="horizontal"
-                    android:background="@color/line">
+                    android:background="@color/theme_color">
                 <ImageView
                         android:layout_width="4dp"
                         android:layout_height="12dp"
@@ -64,8 +66,9 @@
                         style="@style/TextView"
                         android:layout_height="45dp"
                         android:text="参数输入"
+                        android:textColor="@color/white"
                         android:gravity="left|center"
-                        android:textSize="18dp"/>
+                        android:textSize="15dp"/>
             </LinearLayout>
 
             <com.example.luke_pipe_check.view.MyTextView
@@ -81,7 +84,7 @@
                 <Spinner
                         android:id="@+id/spPipeLevel"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="33dp"
                         android:entries="@array/pipelevel"/>
             </LinearLayout>
             <View style="@style/HourLine"/>
@@ -100,7 +103,7 @@
                 <Spinner
                         android:id="@+id/spPipeMaterial"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="33dp"
                         android:entries="@array/pipematerial"/>
             </LinearLayout>
             <View style="@style/HourLine"/>
@@ -108,13 +111,14 @@
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
+                    android:visibility="gone"
                     app:header_title="ReL-管道材料的屈服强度 "/>
             <EditText
                     android:id="@+id/etStrength"
                     android:layout_width="match_parent"
                     android:inputType="number|numberDecimal"
+                    android:visibility="gone"
                     style="@style/EditText"/>
-            <View style="@style/HourLine"/>
 
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
@@ -190,13 +194,13 @@
                     android:id="@+id/etMaxWorkMPa"
                     android:layout_width="match_parent"
                     android:inputType="number|numberDecimal"
-                    style="@style/EditText"
-                    android:layout_height="45dp" />
+                    style="@style/EditText" />
             <View style="@style/HourLine"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
                 <Spinner
                         android:id="@+id/spSelect"
@@ -205,8 +209,6 @@
                         android:text="附近最小壁厚(mm)："
                         android:layout_marginLeft="10dp"
                         android:entries="@array/select"/>
-                <View style="@style/VLine"
-                        android:layout_height="15dp"/>
                 <EditText
                         android:id="@+id/etNum"
                         style="@style/EditText"
@@ -216,9 +218,10 @@
 
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
-                    android:background="@color/line">
+                    android:background="@color/theme_color">
                 <ImageView
                         android:layout_width="4dp"
                         android:layout_height="12dp"
@@ -229,8 +232,9 @@
                         style="@style/TextView"
                         android:layout_height="45dp"
                         android:text="计算结果"
+                        android:textColor="@color/white"
                         android:gravity="left|center"
-                        android:textSize="18dp"/>
+                        android:textSize="15dp"/>
             </LinearLayout>
             <TextView
                     style="@style/TextViewGrade"

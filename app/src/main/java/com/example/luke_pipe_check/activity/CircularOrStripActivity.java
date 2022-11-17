@@ -85,7 +85,7 @@ public class CircularOrStripActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new StatusBarUtils().setWindowStatusBarColor(CircularOrStripActivity.this, R.color.color_bg_selected);
+        new StatusBarUtils().setWindowStatusBarColor(CircularOrStripActivity.this, R.color.black);
         setContentView(R.layout.activity_circular_or_strip);
         ButterKnife.bind(this);
         spinnerSelect();

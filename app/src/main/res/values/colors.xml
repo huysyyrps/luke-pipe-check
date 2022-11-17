@@ -279,4 +279,5 @@
 
     <color name="theme_back_color">#262626</color>
     <color name="theme_color">#f4b129</color>
+    <color name="theme_button">#C5C7CB</color>
 </resources>

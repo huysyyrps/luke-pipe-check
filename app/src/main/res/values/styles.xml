@@ -26,7 +26,7 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:textSize">14dp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/theme_color</item>
     </style>
 
     <style name="VLine">
@@ -40,14 +40,15 @@
     <style name="EditText">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:background">@drawable/linelayout_qradion</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="android:background">@drawable/textview_radion</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:paddingLeft">20dp</item>
         <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/theme_color</item>
     </style>
 
     <!--自定义横向分割线-->
@@ -63,5 +64,13 @@
         <attr name="header_title" format="string" />
         <attr name="header_is_title_visiable" format="boolean" />
         <attr name="header_is_left_iv_visiable" format="boolean" />
+    </declare-styleable>
+
+    <!-- 自定义Button控件的属性-->
+    <declare-styleable name="BaseButton">
+        <!-- 背景颜色-->
+        <attr name="bg_color" format="color" />
+        <!-- 圆角大小-->
+        <attr name="bg_corner" format="dimension" />
     </declare-styleable>
 </resources>

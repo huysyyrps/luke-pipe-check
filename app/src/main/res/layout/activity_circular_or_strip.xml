@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayoutHeader"
         android:layout_width="match_parent"
-        android:background="@color/color_bg_selected"
+        android:background="@color/black"
         android:layout_height="45dp">
         <ImageView
             android:id="@+id/ivBack"
@@ -38,6 +38,7 @@
             android:layout_centerInParent="true"
             android:layout_width="55dp"
             android:gravity="center"
+                android:background="@drawable/pxqbutton_select"
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
@@ -47,13 +48,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+                android:background="@color/theme_back_color">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal"
-                android:background="@color/line">
+                android:background="@color/theme_color">
                 <ImageView
                     android:layout_width="4dp"
                     android:layout_height="12dp"
@@ -65,7 +67,8 @@
                     android:layout_height="45dp"
                     android:text="参数输入"
                     android:gravity="left|center"
-                    android:textSize="18dp"/>
+                        android:textColor="@color/white"
+                    android:textSize="15dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -85,7 +88,7 @@
                     <Spinner
                             android:id="@+id/spPSelect"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="33dp"
                             android:entries="@array/pipe"/>
                 </LinearLayout>
                 <View style="@style/HourLine"/>
@@ -115,7 +118,7 @@
                         <Spinner
                                 android:id="@+id/spPipeLevel"
                                 android:layout_width="match_parent"
-                                android:layout_height="40dp"
+                                android:layout_height="33dp"
                                 android:entries="@array/pipe"/>
                     </LinearLayout>
                     <View style="@style/HourLine"/>
@@ -237,14 +240,13 @@
                         android:layout_width="match_parent"
                         android:inputType="number|numberDecimal"
                         style="@style/EditText"/>
-                <View style="@style/HourLine"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="25dp"
                 android:orientation="horizontal"
-                android:background="@color/line">
+                android:background="@color/theme_color">
                 <ImageView
                     android:layout_width="4dp"
                     android:layout_height="12dp"
@@ -257,7 +259,8 @@
                     android:layout_height="45dp"
                     android:text="未焊透缺陷级别"
                     android:gravity="left|center"
-                    android:textSize="18dp"/>
+                    android:textSize="15dp"
+                        android:textColor="@color/white"/>
             </LinearLayout>
 
             <TextView

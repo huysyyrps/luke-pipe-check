@@ -32,6 +32,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/luke_pipe_check/main/presenter/LoginPresenter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/luke_pipe_check/main/presenter/RegisterPresenter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/luke_pipe_check/main/presenter/TokenTestPresenter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_select.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/pxqbutton_select.xml" charset="GBK" />
   </component>
 </project>

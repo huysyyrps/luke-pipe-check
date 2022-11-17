@@ -82,7 +82,7 @@ public class LandActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        new StatusBarUtils().setWindowStatusBarColor(LandActivity.this, R.color.color_bg_selected);
+        new StatusBarUtils().setWindowStatusBarColor(LandActivity.this, R.color.black);
         alertDialogUtil = new AlertDialogUtil(LandActivity.this);
         spinneronCliect();
     }
@@ -345,6 +345,9 @@ public class LandActivity extends AppCompatActivity {
                 // Another interface callback
             }
         });
+        ArrayAdapter<String> selectAdapter = new ArrayAdapter<>(this, R.layout.adapter_item_layout, getResources().getStringArray(R.array.select));
+        spSelect.setAdapter(selectAdapter);
+        spSelect.setSelection(0);
         spSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -362,7 +365,6 @@ public class LandActivity extends AppCompatActivity {
                 // Another interface callback
             }
         });
-
     }
 
     @OnClick({R.id.tvRight, R.id.ivBack})

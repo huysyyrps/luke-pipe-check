@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,19 +43,19 @@ public class ActivityCode extends AppCompatActivity {
     RelativeLayout relativeLayoutHeader;
     @BindView(R.id.tvCode)
     TextView tvCode;
-    @BindView(R.id.btnCopy)
-    Button btnCopy;
+    @BindView(R.id.tvCopy)
+    TextView tvCopy;
     @BindView(R.id.etCode)
     EditText etCode;
-    @BindView(R.id.btnSend)
-    Button btnSend;
+    @BindView(R.id.tvSend)
+    TextView tvSend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code);
         ButterKnife.bind(this);
-        new StatusBarUtils().setWindowStatusBarColor(ActivityCode.this, R.color.color_bg_selected);
+        new StatusBarUtils().setWindowStatusBarColor(ActivityCode.this, R.color.black);
         String deviceId = Settings.System.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         String time = String.valueOf(new Date().getTime());
         String strRand = "";
@@ -66,17 +67,17 @@ public class ActivityCode extends AppCompatActivity {
         tvCode.setText(code1);
     }
 
-    @OnClick({R.id.btnCopy, R.id.btnSend})
+    @OnClick({R.id.tvCopy, R.id.tvSend})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btnCopy:
+            case R.id.tvCopy:
                 ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 // 创建普通字符型ClipData
                 ClipData mClipData = ClipData.newPlainText("Label", tvCode.getText().toString());
                 // 将ClipData内容放到系统剪贴板里。
                 cm.setPrimaryClip(mClipData);
                 break;
-            case R.id.btnSend:
+            case R.id.tvSend:
                 if (etCode.getText().toString().equals("lukejiance-hxf-development")){
                     Intent intent = new Intent(this, SelectActivity.class);
                     startActivity(intent);
@@ -88,8 +89,14 @@ public class ActivityCode extends AppCompatActivity {
                     String code = buf.reverse().toString();
 
                     String writeData = etCode.getText().toString();
-                    String decryptCode = writeData.split(";;")[0];
-                    String userDate = writeData.split(";;")[1];
+                    String decryptCode = null, userDate = null;
+                    try {
+                         decryptCode = writeData.split(";;")[0];
+                         userDate = writeData.split(";;")[1];
+                    }catch (Exception e){
+                        Toast.makeText(this, R.string.leavecode_error, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
 
                     if (decryptCode.equals(code)) {
                         StringBuffer writeDateBuf = new StringBuffer(userDate);
@@ -99,6 +106,8 @@ public class ActivityCode extends AppCompatActivity {
                         Intent intent = new Intent(this, SelectActivity.class);
                         startActivity(intent);
                         finish();
+                    }else {
+                        Toast.makeText(this, R.string.leavecode_error, Toast.LENGTH_SHORT).show();
                     }
                     Log.e("XXX", strmd5);
                     Log.e("XXXX", code);

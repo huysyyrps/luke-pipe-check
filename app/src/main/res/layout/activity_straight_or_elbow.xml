@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/relativeLayoutHeader"
-        android:layout_width="match_parent"
-        android:background="@color/color_bg_selected"
-        android:layout_height="45dp">
+            android:id="@+id/relativeLayoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/black">
 
         <ImageView
                 android:id="@+id/ivBack"
@@ -37,6 +37,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
                 android:layout_marginRight="10dp"
+                android:background="@drawable/pxqbutton_select"
                 android:gravity="center"
                 android:text="计算"
                 android:textColor="@android:color/white"
@@ -44,221 +45,258 @@
     </RelativeLayout>
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/theme_back_color"
+                android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal"
-                android:background="@color/line">
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:background="@color/theme_color"
+                    android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="4dp"
-                    android:layout_height="12dp"
-                    android:background="@color/color_selected"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"/>
+                        android:layout_width="4dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/color_selected" />
+
                 <TextView
-                    style="@style/TextView"
-                    android:layout_height="45dp"
-                    android:text="参数输入"
-                    android:gravity="left|center"
-                    android:textSize="18dp"/>
+                        style="@style/TextView"
+                        android:layout_height="45dp"
+                        android:gravity="left|center"
+                        android:text="参数输入"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
             </LinearLayout>
 
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                 <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        app:header_title="管材选择 "/>
+                        app:header_title="管材选择 " />
+
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/linelayout_qradion">
+
                     <Spinner
                             android:id="@+id/spPSelect"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:entries="@array/pipe"/>
+                            android:layout_height="33dp"
+                            android:entries="@array/pipe" />
                 </LinearLayout>
-                <View style="@style/HourLine"/>
+
+                <View style="@style/HourLine" />
             </LinearLayout>
 
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    app:header_title="p-允许（监控）使用压力 "/>
+                    app:header_title="p-允许（监控）使用压力 " />
+
             <EditText
                     android:id="@+id/etWorkMPa"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:inputType="number|numberDecimal"
-                    style="@style/EditText"/>
-            <View style="@style/HourLine"/>
+                    android:inputType="number|numberDecimal" />
+
+            <View style="@style/HourLine" />
 
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    app:header_title="D-管子外径 "/>
+                    app:header_title="D-管子外径 " />
+
             <EditText
                     android:id="@+id/etPipeOD"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:inputType="number|numberDecimal"
-                    style="@style/EditText"/>
-            <View style="@style/HourLine"/>
+                    android:inputType="number|numberDecimal" />
+
+            <View style="@style/HourLine" />
 
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    app:header_title="S-允许使用温度下金属材料的许用应力 "/>
+                    app:header_title="S-允许使用温度下金属材料的许用应力 " />
+
             <EditText
                     android:id="@+id/etUserMpa"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:inputType="number|numberDecimal"
-                    style="@style/EditText"/>
-            <View style="@style/HourLine"/>
+                    android:inputType="number|numberDecimal" />
+
+            <View style="@style/HourLine" />
 
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    app:header_title="Y-计算系数(参考下图)力 "/>
+                    app:header_title="Y-计算系数(参考下图)力 " />
+
             <EditText
                     android:id="@+id/etCCoefficient"
-                    android:layout_width="match_parent"
-                    android:inputType="number|numberDecimal"
                     style="@style/EditText"
+                    android:layout_width="match_parent"
                     android:hint=""
-                    android:layout_height="45dp" />
-            <View style="@style/HourLine"/>
+                    android:inputType="number|numberDecimal" />
+
+            <View style="@style/HourLine" />
 
             <LinearLayout
-                android:id="@+id/linStraightTop"
+                    android:id="@+id/linStraightTop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                android:orientation="vertical">
+                    android:orientation="vertical">
+
                 <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        app:header_title="本次实测直管壁厚最小值 "/>
+                        app:header_title="本次实测直管壁厚最小值 " />
+
                 <EditText
                         android:id="@+id/etMinThickness"
+                        style="@style/EditText"
                         android:layout_width="match_parent"
-                        android:inputType="number|numberDecimal"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        android:inputType="number|numberDecimal" />
+
+                <View style="@style/HourLine" />
             </LinearLayout>
 
             <LinearLayout
                     android:id="@+id/linElbowTop"
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
                 <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        app:header_title="R-弯头的弯曲半径 "/>
+                        app:header_title="R-弯头的弯曲半径 " />
+
                 <EditText
                         android:id="@+id/etRadius"
+                        style="@style/EditText"
                         android:layout_width="match_parent"
-                        android:inputType="number|numberDecimal"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        android:inputType="number|numberDecimal" />
+
+                <View style="@style/HourLine" />
 
                 <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        app:header_title="本次实测弯头内侧壁厚最小值 "/>
+                        app:header_title="本次实测弯头内侧壁厚最小值 " />
+
                 <EditText
                         android:id="@+id/etWithinMin"
+                        style="@style/EditText"
                         android:layout_width="match_parent"
-                        android:inputType="number|numberDecimal"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        android:inputType="number|numberDecimal" />
+
+                <View style="@style/HourLine" />
 
                 <com.example.luke_pipe_check.view.MyTextView
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        app:header_title="本次实测弯头外侧壁厚最小值 "/>
+                        app:header_title="本次实测弯头外侧壁厚最小值 " />
+
                 <EditText
                         android:id="@+id/etOutMin"
+                        style="@style/EditText"
                         android:layout_width="match_parent"
-                        android:inputType="number|numberDecimal"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        android:inputType="number|numberDecimal" />
+
+                <View style="@style/HourLine" />
             </LinearLayout>
 
             <com.example.luke_pipe_check.view.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    app:header_title="φ-焊件的纵向焊接接头系数或铸件质量系数，取1.0 "/>
+                    app:header_title="φ-焊件的纵向焊接接头系数或铸件质量系数，取1.0 " />
+
             <TextView
                     android:id="@+id/etPipeCoefficient"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
                     android:inputType="number|numberDecimal"
-                    android:text="1"
-                    style="@style/EditText"/>
-            <View style="@style/HourLine"/>
+                    android:text="1" />
+
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:orientation="horizontal"
-                android:background="@color/line">
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/theme_color"
+                    android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="4dp"
-                    android:layout_height="12dp"
-                    android:background="@color/color_selected"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"/>
+                        android:layout_width="4dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/color_selected" />
+
                 <TextView
-                    style="@style/TextView"
-                    android:layout_height="45dp"
-                    android:text="计算结果"
-                    android:gravity="left|center"
-                    android:textSize="18dp"/>
+                        style="@style/TextView"
+                        android:layout_height="45dp"
+                        android:gravity="left|center"
+                        android:text="计算结果"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
             </LinearLayout>
 
 
             <LinearLayout
-                android:id="@+id/linStraightBot"
+                    android:id="@+id/linStraightBot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                        style="@style/TextViewGrade"
-                        android:layout_width="match_parent"
-                        android:text="直管计算厚度 ："/>
-                <TextView
-                        android:id="@+id/tvCThickness"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                    android:orientation="vertical">
 
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="校核是否合格 ："/>
+                        android:text="直管计算厚度 ：" />
+
+                <TextView
+                        android:id="@+id/tvCThickness"
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
+
+                <TextView
+                        style="@style/TextViewGrade"
+                        android:layout_width="match_parent"
+                        android:text="校核是否合格 ：" />
+
                 <TextView
                         android:id="@+id/tvResult"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ic_ccoefficient"/>
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/ic_ccoefficient" />
             </LinearLayout>
 
             <LinearLayout
@@ -266,78 +304,89 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="弯头内侧I ："/>
+                        android:text="弯头内侧I ：" />
+
                 <TextView
                         android:id="@+id/tvWithinI"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="弯头外侧I ："/>
+                        android:text="弯头外侧I ：" />
+
                 <TextView
                         android:id="@+id/tvOutI"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="弯头内测计算厚度tW："/>
+                        android:text="弯头内测计算厚度tW：" />
+
                 <TextView
                         android:id="@+id/tvWithinTW"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="弯头外测计算厚度tW："/>
+                        android:text="弯头外测计算厚度tW：" />
+
                 <TextView
                         android:id="@+id/tvOutTW"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="弯头内侧强度校核是否合格："/>
+                        android:text="弯头内侧强度校核是否合格：" />
+
                 <TextView
                         android:id="@+id/tvWithinResult"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <TextView
                         style="@style/TextViewGrade"
                         android:layout_width="match_parent"
-                        android:text="弯头内侧强度校核是否合格 ："/>
+                        android:text="弯头内侧强度校核是否合格 ：" />
+
                 <TextView
                         android:id="@+id/tvOutResult"
-                        android:layout_width="match_parent"
-                        style="@style/EditText"/>
-                <View style="@style/HourLine"/>
+                        style="@style/EditText"
+                        android:layout_width="match_parent" />
+
+                <View style="@style/HourLine" />
 
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_ccoefficient"/>
+                        android:src="@drawable/ic_ccoefficient" />
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
-
-
 
 
 </LinearLayout>

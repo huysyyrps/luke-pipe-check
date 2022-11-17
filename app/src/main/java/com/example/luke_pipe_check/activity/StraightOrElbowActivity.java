@@ -83,7 +83,7 @@ public class StraightOrElbowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new StatusBarUtils().setWindowStatusBarColor(StraightOrElbowActivity.this, R.color.color_bg_selected);
+        new StatusBarUtils().setWindowStatusBarColor(StraightOrElbowActivity.this, R.color.black);
         setContentView(R.layout.activity_straight_or_elbow);
         ButterKnife.bind(this);
         spinnerSelect();
