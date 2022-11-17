@@ -26,18 +26,20 @@
 
 
     <string name="land_leave">壁厚评级</string>
-    <string name="local_penetration">未焊透/局部减薄评级</string>
+    <string name="local_penetration">局部减薄评级</string>
     <!--    <string name="local_thinning">局部减薄评级</string>-->
 
     <string name="pressure_leave">耐压强度</string>
-    <string name="straight">直管/弯头耐压强度评级</string>
+    <string name="straight">耐压强度评级</string>
     <string name="elbow">弯头评级</string>
 
     <string name="welding_leave">焊接评级</string>
-    <string name="circular_line">圆形/条形缺陷评级</string>
+    <string name="circular_line">焊接缺陷评级</string>
+    <string name="circular_line1">焊接缺陷评级\n(圆形缺陷、条形缺陷)</string>
     <string name="line">条形评级</string>
 
     <string name="weld_other">咬边/错边/未熔合评级</string>
+    <string name="weld_other1">焊接缺陷评级\n(咬边、错边、未熔合)</string>
 
     <string name="no_influence">不影响定级</string>
     <string name="influence">按局部减薄定级</string>

@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
-                android:background="@color/theme_color">
+                android:background="@color/white">
                 <ImageView
                     android:layout_width="4dp"
                     android:layout_height="12dp"
@@ -67,7 +67,7 @@
                     android:layout_height="45dp"
                     android:text="参数输入"
                     android:gravity="left|center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                     android:textSize="15dp"/>
             </LinearLayout>
 
@@ -246,7 +246,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
-                android:background="@color/theme_color">
+                android:background="@color/white">
                 <ImageView
                     android:layout_width="4dp"
                     android:layout_height="12dp"
@@ -260,7 +260,7 @@
                     android:text="未焊透缺陷级别"
                     android:gravity="left|center"
                     android:textSize="15dp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/black"/>
             </LinearLayout>
 
             <TextView

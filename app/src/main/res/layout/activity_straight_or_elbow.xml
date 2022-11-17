@@ -57,7 +57,7 @@
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:background="@color/theme_color"
+                    android:background="@color/white"
                     android:orientation="horizontal">
 
                 <ImageView
@@ -72,7 +72,7 @@
                         android:layout_height="45dp"
                         android:gravity="left|center"
                         android:text="参数输入"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="15dp" />
             </LinearLayout>
 
@@ -240,7 +240,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="5dp"
-                    android:background="@color/theme_color"
+                    android:background="@color/white"
                     android:orientation="horizontal">
 
                 <ImageView
@@ -255,7 +255,7 @@
                         android:layout_height="45dp"
                         android:gravity="left|center"
                         android:text="计算结果"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="15dp" />
             </LinearLayout>
 
