@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.luke_pipe_check.R;
+import com.example.luke_pipe_check.util.HideKeyboard;
 import com.example.luke_pipe_check.util.StatusBarUtils;
 
 import java.math.BigDecimal;
@@ -112,6 +113,11 @@ public class CircularOrStripActivity extends AppCompatActivity {
                     linStripBot.setVisibility(View.VISIBLE);
                     linCircular.setVisibility(View.GONE);
                 }
+                tvFSSL.setText("");
+                tvC.setText("");
+                tvTe.setText("");
+                tvLevel.setText("");
+
             }
 
             @Override
@@ -178,19 +184,24 @@ public class CircularOrStripActivity extends AppCompatActivity {
                     if (halfTe <= 6) {
                         if (Double.valueOf(circularDiameter) < halfTe) {
                             tvLevel.setText("2级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.black));
                         } else {
                             tvLevel.setText("4级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.red));
                         }
                     } else {
                         if (Double.valueOf(circularDiameter) < 6) {
                             tvLevel.setText("2级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.black));
                         } else {
                             tvLevel.setText("4级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.red));
                         }
                     }
 
                 } else {
                     tvLevel.setText("4级");
+                    tvLevel.setTextColor(getResources().getColor(R.color.red));
                 }
             }
         }
@@ -238,26 +249,34 @@ public class CircularOrStripActivity extends AppCompatActivity {
                     if (Double.valueOf(stripWidth) <= halfTe && Double.valueOf(stripWidth) <= 5) {
                         if (Double.valueOf(stripHeight) <= 0.50 * Math.PI * Double.valueOf(pipeOD)) {
                             tvLevel.setText("2级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.black));
                         } else if (Double.valueOf(stripHeight) > 0.50 * Math.PI * Double.valueOf(pipeOD) && Double.valueOf(stripHeight) <= 1.00 * Math.PI * Double.valueOf(pipeOD)) {
                             tvLevel.setText("3级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.black));
                         } else {
                             tvLevel.setText("4级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.red));
                         }
                     } else {
                         tvLevel.setText("4级");
+                        tvLevel.setTextColor(getResources().getColor(R.color.red));
                     }
                 } else {
                     double halfTe = 0.35 * te;
                     if (Double.valueOf(stripWidth) <= halfTe && Double.valueOf(stripWidth) <= 6) {
                         if (Double.valueOf(stripHeight) <= 0.50 * Math.PI * Double.valueOf(pipeOD)) {
                             tvLevel.setText("2级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.black));
                         } else if (Double.valueOf(stripHeight) > 0.50 * Math.PI * Double.valueOf(pipeOD) && Double.valueOf(stripHeight) <= 1.00 * Math.PI * Double.valueOf(pipeOD)) {
                             tvLevel.setText("3级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.black));
                         } else {
                             tvLevel.setText("4级");
+                            tvLevel.setTextColor(getResources().getColor(R.color.red));
                         }
                     } else {
                         tvLevel.setText("4级");
+                        tvLevel.setTextColor(getResources().getColor(R.color.red));
                     }
                 }
             }
@@ -270,6 +289,7 @@ public class CircularOrStripActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.tvRight:
                 getData();
+                new HideKeyboard().hideSoftInput(this);
                 break;
             case R.id.ivBack:
                 finish();

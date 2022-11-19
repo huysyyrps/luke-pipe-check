@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.luke_pipe_check.R;
+import com.example.luke_pipe_check.util.HideKeyboard;
 import com.example.luke_pipe_check.util.StatusBarUtils;
 
 import java.math.BigDecimal;
@@ -112,6 +113,14 @@ public class StraightOrElbowActivity extends AppCompatActivity {
                     linElbowTop.setVisibility(View.VISIBLE);
                     linElbowBot.setVisibility(View.VISIBLE);
                 }
+                tvCThickness.setText("");
+                tvResult.setText("");
+                tvWithinI.setText("");
+                tvOutI.setText("");
+                tvWithinTW.setText("");
+                tvOutTW.setText("");
+                tvWithinResult.setText("");
+                tvOutResult.setText("");
             }
 
             @Override
@@ -144,14 +153,13 @@ public class StraightOrElbowActivity extends AppCompatActivity {
                 Toast.makeText(this, "请输入最小壁厚", Toast.LENGTH_SHORT).show();
             } else {
                 double molecule = Double.valueOf(workMpa) * Double.valueOf(pipeOD);
-                ;
                 double denominator = 2 * (Double.valueOf(userMpa) * Double.valueOf(pipeCoefficient) + Double.valueOf(workMpa) * Double.valueOf(cCoefficient));
                 double t = molecule / denominator;
                 BigDecimal result = new BigDecimal(t).setScale(6, BigDecimal.ROUND_HALF_UP);
                 tvCThickness.setText(result + "");
                 if (t < Double.valueOf(minThickness)) {
                     tvResult.setText("直管强度校核合格");
-                    tvResult.setTextColor(getResources().getColor(R.color.green));
+                    tvResult.setTextColor(getResources().getColor(R.color.black));
                 } else {
                     tvResult.setText("直管强度校核不合格");
                     tvResult.setTextColor(getResources().getColor(R.color.red));
@@ -212,7 +220,7 @@ public class StraightOrElbowActivity extends AppCompatActivity {
 
                 if (withinTW < Double.valueOf(withinMin)) {
                     tvWithinResult.setText("弯头内侧强度校核合格");
-                    tvWithinResult.setTextColor(getResources().getColor(R.color.green));
+                    tvWithinResult.setTextColor(getResources().getColor(R.color.black));
                 } else {
                     tvWithinResult.setText("弯头内侧强度校核不合格");
                     tvWithinResult.setTextColor(getResources().getColor(R.color.red));
@@ -220,7 +228,7 @@ public class StraightOrElbowActivity extends AppCompatActivity {
 
                 if (outTW < Double.valueOf(outMin)) {
                     tvOutResult.setText("弯头外侧强度校核合格");
-                    tvOutResult.setTextColor(getResources().getColor(R.color.green));
+                    tvOutResult.setTextColor(getResources().getColor(R.color.black));
                 } else {
                     tvOutResult.setText("弯头外侧强度校核不合格");
                     tvOutResult.setTextColor(getResources().getColor(R.color.red));
@@ -236,6 +244,7 @@ public class StraightOrElbowActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.tvRight:
                 getData();
+                new HideKeyboard().hideSoftInput(this);
                 break;
             case R.id.ivBack:
                 finish();

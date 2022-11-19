@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/weld_other"
+                android:text="@string/welding_leave"
                 android:textColor="@android:color/white"
                 android:textSize="17sp" />
 
@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:orientation="horizontal"
-                    android:background="@color/white">
+                    android:background="@color/black">
                 <ImageView
                         android:layout_width="4dp"
                         android:layout_height="12dp"
@@ -67,7 +67,7 @@
                         android:layout_height="match_parent"
                         android:text="参数输入"
                         android:gravity="left|center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="15dp"/>
             </LinearLayout>
 
@@ -85,7 +85,8 @@
                         android:id="@+id/spPipeLevel"
                         android:layout_width="match_parent"
                         android:layout_height="33dp"
-                        android:entries="@array/pipe"/>
+                        android:layout_marginLeft="10dp"
+                        android:entries="@array/weld"/>
             </LinearLayout>
             <View style="@style/HourLine"/>
 
@@ -227,7 +228,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal"
-                    android:background="@color/white">
+                    android:background="@color/black">
                 <ImageView
                         android:layout_width="4dp"
                         android:layout_height="12dp"
@@ -240,7 +241,7 @@
                         android:text="计算结果"
                         android:gravity="left|center"
                         android:textSize="15dp"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/white"/>
             </LinearLayout>
 
             <TextView
@@ -256,16 +257,16 @@
                         android:id="@+id/tvLevel1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:textColor="@color/theme_color"
+                        android:textColor="@color/black"
                         android:gravity="center_vertical"
-                        android:layout_height="40dp"/>
+                        android:layout_height="35dp"/>
                 <TextView
                         android:id="@+id/tvLevel2"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:textColor="@color/theme_color"
+                        android:textColor="@color/black"
                         android:gravity="center_vertical"
-                        android:layout_height="40dp"/>
+                        android:layout_height="35dp"/>
             </LinearLayout>
 
             <TextView

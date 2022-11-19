@@ -48,7 +48,7 @@
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:paddingLeft">20dp</item>
         <item name="android:textSize">14dp</item>
-        <item name="android:textColor">@color/theme_color</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <!--自定义横向分割线-->

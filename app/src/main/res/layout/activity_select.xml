@@ -102,7 +102,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
                         android:layout_weight="1"
-                        android:background="#020929"
+                        android:background="@drawable/button_select"
                         android:orientation="vertical">
 
                     <ImageView
@@ -136,7 +136,7 @@
                         android:layout_marginBottom="3dp"
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
-                        android:background="@color/darkslateblue"
+                        android:background="@drawable/button_select"
                         android:orientation="vertical">
 
                     <ImageView
@@ -162,7 +162,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
                         android:layout_weight="1"
-                        android:background="@color/holo_green_light"
+                        android:background="@drawable/pxqbutton_select"
                         android:orientation="vertical">
 
                     <ImageView

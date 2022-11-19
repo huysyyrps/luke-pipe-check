@@ -103,6 +103,8 @@ public class WeldOtherActivity extends AppCompatActivity {
                     linError.setVisibility(View.GONE);
                     linFuse.setVisibility(View.VISIBLE);
                 }
+                tvLevel1.setText("");
+                tvLevel2.setText("");
             }
 
             @Override
@@ -127,7 +129,7 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel1.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC1 = getResources().getString(R.string.no_influence);
-                        tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+                        tvLevel1.setTextColor(getResources().getColor(R.color.black));
                     }
                     tvLevel1.setText("GC1:" + leaveGC1);
                 }
@@ -138,11 +140,12 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel2.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC2 = getResources().getString(R.string.no_influence);
-                        tvLevel2.setTextColor(getResources().getColor(R.color.theme_color));
+                        tvLevel2.setTextColor(getResources().getColor(R.color.black));
                     }
                     tvLevel2.setText("GC2/3:" + leaveGC2);
                 }
             }
+            tvLevel2.setVisibility(View.VISIBLE);
         } else if (selectTag.equals("错边")) {
             if (etErrorGC1.getText().toString().equals("") && etErrorGC2.getText().toString().equals("")) {
                 Toast.makeText(this, "请输入管道外壁错边量", Toast.LENGTH_SHORT).show();
@@ -159,7 +162,7 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel1.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC1 = getResources().getString(R.string.two_leave);
-                        tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+                        tvLevel1.setTextColor(getResources().getColor(R.color.black));
                     }
                     tvLevel1.setText("GC1:" + leaveGC1);
                 }
@@ -170,11 +173,12 @@ public class WeldOtherActivity extends AppCompatActivity {
                         tvLevel2.setTextColor(getResources().getColor(R.color.red));
                     } else {
                         leaveGC2 = getResources().getString(R.string.two_leave);
-                        tvLevel2.setTextColor(getResources().getColor(R.color.theme_color));
+                        tvLevel2.setTextColor(getResources().getColor(R.color.black));
                     }
                     tvLevel2.setText("GC2/3:" + leaveGC2);
                 }
             }
+            tvLevel2.setVisibility(View.VISIBLE);
         } else if (selectTag.equals("未熔合")) {
             if (etPipeThickness.getText().toString().equals("")) {
                 Toast.makeText(this, "请输入上次定期检验缺陷附近壁厚实测值或名义壁厚", Toast.LENGTH_SHORT).show();
@@ -203,7 +207,7 @@ public class WeldOtherActivity extends AppCompatActivity {
             if (!etOnlyMax.getText().toString().trim().equals("")){
                 onlyMax = Double.valueOf(etOnlyMax.getText().toString().trim());
             }
-
+            tvLevel2.setVisibility(View.GONE);
             if (teData<2.5&&onlyMax!=0){
                 tvLevel1.setText(R.string.four_leave);
                 tvLevel1.setTextColor(getResources().getColor(R.color.red));
@@ -211,7 +215,7 @@ public class WeldOtherActivity extends AppCompatActivity {
             if (teData>=2.5&&teData<4){
                 if (onlyMax<=0.15*teData && onlyMax<=0.5){
                     tvLevel1.setText(R.string.no_influence);
-                    tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+                    tvLevel1.setTextColor(getResources().getColor(R.color.black));
                 }else {
                     tvLevel1.setText(R.string.four_leave);
                     tvLevel1.setTextColor(getResources().getColor(R.color.red));
@@ -235,12 +239,12 @@ public class WeldOtherActivity extends AppCompatActivity {
             if (teData>=20){
                 if (onlyMax<=3.0){
                     tvLevel1.setText(R.string.two_leave);
-                    tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+                    tvLevel1.setTextColor(getResources().getColor(R.color.black));
                 }else {
                     double threeLeaveData = 0.20*teData < 5.0 ? 0.20*teData : 5.0;
                     if (onlyMax<=threeLeaveData){
                         tvLevel1.setText(R.string.there_leave);
-                        tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+                        tvLevel1.setTextColor(getResources().getColor(R.color.black));
                     }else {
                         tvLevel1.setText(R.string.four_leave);
                         tvLevel1.setTextColor(getResources().getColor(R.color.red));
@@ -253,10 +257,10 @@ public class WeldOtherActivity extends AppCompatActivity {
     private void leaveContrast(double onlyMax, double twoLeaveData, double threeLeaveData){
         if (onlyMax<=twoLeaveData){
             tvLevel1.setText(R.string.two_leave);
-            tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+            tvLevel1.setTextColor(getResources().getColor(R.color.black));
         }else if (onlyMax<=threeLeaveData){
             tvLevel1.setText(R.string.there_leave);
-            tvLevel1.setTextColor(getResources().getColor(R.color.theme_color));
+            tvLevel1.setTextColor(getResources().getColor(R.color.black));
         }else if (onlyMax>threeLeaveData){
             tvLevel1.setText(R.string.four_leave);
             tvLevel1.setTextColor(getResources().getColor(R.color.red));
